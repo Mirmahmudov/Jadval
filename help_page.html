@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yordam - Tatuff dars jadvallari</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/help.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">TATUFF DARS JADVALLARI</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bosh sahifa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./jadvallar_page.html">Jadvallar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./fakultetlar_page.html">Fakultetlar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./news_page.html">Yangiliklar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./help_page.html">Yordam</a>
+            </li>
+          </ul>
+          <button class="btn btn-light ms-3">Kirish</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Yordam markazi</h1>
+        <p class="lead">
+          Tizimdan foydalanish bo'yicha ko'rsatmalar, qo'llanmalar va tez-tez
+          so'raladigan savollar
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <!-- Search -->
+        <div class="row mb-5">
+          <div class="col-md-8 mx-auto text-center">
+            <h3 class="mb-4">Qanday yordam kerak?</h3>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Savol yoki kalit so'zni kiriting..."
+              />
+              <button class="btn btn-primary" type="button">Qidirish</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Help Categories -->
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="card help-category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-calendar-check help-icon">📅</i>
+                <h4>Dars jadvallari</h4>
+                <p>Jadvallarni ko'rish va ulardan foydalanish</p>
+                <a href="#timetables" class="btn btn-primary">Ko'rish</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card help-category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-person-circle help-icon">👤</i>
+                <h4>Foydalanuvchi profili</h4>
+                <p>Profil ma'lumotlarini o'zgartirish</p>
+                <a href="#profile" class="btn btn-primary">Ko'rish</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card help-category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-gear help-icon">⚙️</i>
+                <h4>Tizim sozlamalari</h4>
+                <p>Interfeys va bildirishnomalar</p>
+                <a href="#settings" class="btn btn-primary">Ko'rish</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card help-category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-phone help-icon">📱</i>
+                <h4>Mobil ilova</h4>
+                <p>Mobil ilovadan foydalanish</p>
+                <a href="#mobile" class="btn btn-primary">Ko'rish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popular FAQs -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <h3 class="mb-4">Tez-tez so'raladigan savollar</h3>
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Dars jadvalini qanday ko'rishim mumkin?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Dars jadvalini ko'rish uchun quyidagi bosqichlarni amalga
+                      oshiring:
+                    </p>
+                    <ol>
+                      <li>
+                        Bosh sahifadagi "Jadvallarni ko'rish" tugmasini bosing
+                      </li>
+                      <li>"Guruhlar bo'yicha" bo'limini tanlang</li>
+                      <li>
+                        O'z guruhingizni ro'yxatdan toping yoki qidiruv
+                        maydoniga guruh raqamini kiriting
+                      </li>
+                      <li>Kerakli sana uchun jadval ko'rsatiladi</li>
+                    </ol>
+                    <p>
+                      Shuningdek, tizimga kirganingizdan so'ng shaxsiy
+                      sahifangizda ham jadvallaringizni ko'rishingiz mumkin.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Dars jadvalida xatolik bor, nima qilishim kerak?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Dars jadvalida xatolik aniqlasangiz:</p>
+                    <ol>
+                      <li>
+                        Jadval sahifasidagi "Xato haqida xabar berish" tugmasini
+                        bosing
+                      </li>
+                      <li>
+                        Maxsus formada xatolik turini belgilang va qo'shimcha
+                        ma'lumotlarni kiriting
+                      </li>
+                      <li>
+                        So'rovingiz administratorlar tomonidan ko'rib chiqiladi
+                        va javob beriladi
+                      </li>
+                    </ol>
+                    <p>
+                      Jadvallar o'zgartirilgan taqdirda, bu haqda bildirishnoma
+                      olasiz va siz ko'rsatgan xato tez orada tuzatiladi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Dars jadvalini PDF formatida yuklab olish mumkinmi?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Ha, albatta. Dars jadvallarini PDF formatida yuklab olish
+                      uchun:
+                    </p>
+                    <ol>
+                      <li>O'zingizga kerakli jadval sahifasiga o'ting</li>
+                      <li>
+                        Sahifaning yuqori qismida "Yuklab olish" tugmasini
+                        toping
+                      </li>
+                      <li>"PDF" formatini tanlang</li>
+                      <li>
+                        Jadval PDF formatida yuklab olinadi va uni chop
+                        etishingiz yoki saqlashingiz mumkin
+                      </li>
+                    </ol>
+                    <p>
+                      Bundan tashqari, jadvallarni Excel, iCal va boshqa
+                      formatlarda ham yuklab olish imkoniyati mavjud.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    Parolimni unutdim, qanday tiklashim mumkin?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Parolingizni tiklash uchun quyidagi amallarni bajaring:
+                    </p>
+                    <ol>
+                      <li>
+                        Kirish sahifasida "Parolni unutdingizmi?" havolasini
+                        bosing
+                      </li>
+                      <li>
+                        Tizimda ro'yxatdan o'tgan elektron pochta manzilingizni
+                        kiriting
+                      </li>
+                      <li>
+                        Pochta manzilingizga parolni tiklash havolasi yuboriladi
+                      </li>
+                      <li>Xatdagi havolani bosing va yangi parol o'rnating</li>
+                    </ol>
+                    <p>
+                      Agar elektron pochta manzilingizga kira olmasangiz,
+                      universitet administratsiyasiga murojaat qiling.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Dars jadvali o'zgarishlaridan qanday xabardor bo'lishim
+                    mumkin?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Dars jadvali o'zgarishlaridan xabardor bo'lish uchun bir
+                      necha usul mavjud:
+                    </p>
+                    <ol>
+                      <li>
+                        Tizimga kirgandan so'ng "Bildirishnomalar" sozlamasini
+                        yoqib qo'ying
+                      </li>
+                      <li>
+                        Mobil ilovada push-bildirishnomalarni yoqib qo'ying
+                      </li>
+                      <li>
+                        Elektron pochta orqali xabarnomalarni yoqib qo'ying
+                      </li>
+                      <li>
+                        Jadvallaringizni o'z taqvimingizga ulash orqali (Google
+                        Calendar, Outlook va boshqalar)
+                      </li>
+                    </ol>
+                    <p>
+                      Bu usullar bilan jadvallaringizdagi har qanday o'zgarish
+                      haqida darhol xabardor bo'lasiz.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Tutorials -->
+        <div class="row mb-5" id="tutorials">
+          <div class="col-12">
+            <h3 class="mb-4">Video qo'llanmalar</h3>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="video-tutorial mb-3">
+                  <img
+                    src="/api/placeholder/320/180"
+                    alt="Video thumbnail"
+                    class="img-fluid"
+                  />
+                  <div class="text-center mt-2">
+                    <button class="btn btn-primary btn-sm">
+                      Videoni ko'rish
+                    </button>
+                  </div>
+                </div>
+                <h5>Tizimga kirish va ro'yxatdan o'tish</h5>
+                <p>
+                  Bu video qo'llanmada tizimga qanday kirish va ro'yxatdan
+                  o'tish kerakligi ko'rsatilgan.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="video-tutorial mb-3">
+                  <img
+                    src="/api/placeholder/320/180"
+                    alt="Video thumbnail"
+                    class="img-fluid"
+                  />
+                  <div class="text-center mt-2">
+                    <button class="btn btn-primary btn-sm">
+                      Videoni ko'rish
+                    </button>
+                  </div>
+                </div>
+                <h5>Jadvallarni ko'rish va ularda ishlash</h5>
+                <p>
+                  Jadvallarni turli ko'rinishlarda ko'rish va ulardan samarali
+                  foydalanish yo'llari.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="video-tutorial mb-3">
+                  <img
+                    src="/api/placeholder/320/180"
+                    alt="Video thumbnail"
+                    class="img-fluid"
+                  />
+                  <div class="text-center mt-2">
+                    <button class="btn btn-primary btn-sm">
+                      Videoni ko'rish
+                    </button>
+                  </div>
+                </div>
+                <h5>Mobil ilovadan foydalanish</h5>
+                <p>
+                  Mobil ilova imkoniyatlarini ko'rib chiqish va smartfonda
+                  jadvallarni ko'rish usullari.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Getting Started Guide -->
+        <div class="row mb-5" id="getting-started">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="mb-0">Boshlang'ich qo'llanma</h3>
+              </div>
+              <div class="card-body">
+                <div class="step-card">
+                  <h5>1. Ro'yxatdan o'tish</h5>
+                  <p>
+                    Universitet tomonidan berilgan ma'lumotlar bilan tizimga
+                    kirishingiz mumkin. Agar sizga login va parol berilmagan
+                    bo'lsa, "Ro'yxatdan o'tish" tugmasini bosib, o'z
+                    ma'lumotlaringizni kiriting. Universitet elektron pochta
+                    manzilingizni kiriting va tasdiqlovchi xatni tekshiring.
+                  </p>
+                </div>
+                <div class="step-card">
+                  <h5>2. Profilni sozlash</h5>
+                  <p>
+                    Tizimga kirgandan so'ng, profil sahifasiga o'ting va shaxsiy
+                    ma'lumotlaringizni to'ldiring. Fakultet, yo'nalish va guruh
+                    ma'lumotlaringizni aniq ko'rsating. Bu tizimning sizga mos
+                    jadvallarni ko'rsatishiga yordam beradi.
+                  </p>
+                </div>
+                <div class="step-card">
+                  <h5>3. Dars jadvalingizni ko'rish</h5>
+                  <p>
+                    Bosh sahifadagi "Jadvallarni ko'rish" tugmasini bosing va
+                    o'z guruhingizni tanlang. Kerakli hafta yoki kunni tanlang
+                    va jadval ko'rsatiladi. Siz kunlik, haftalik yoki oylik
+                    ko'rinishlarda jadvallarni ko'rishingiz mumkin.
+                  </p>
+                </div>
+                <div class="step-card">
+                  <h5>4. Bildirishnomalarni sozlash</h5>
+                  <p>
+                    Jadval o'zgarishlari haqida xabardor bo'lish uchun
+                    bildirishnomalarni yoqib qo'ying. "Sozlamalar" sahifasiga
+                    o'ting va bildirishnoma turlarini tanlang. Sizga elektron
+                    pochta, push-xabarlar yoki ikkalasi ham kerakligini
+                    belgilang.
+                  </p>
+                </div>
+                <div class="step-card">
+                  <h5>5. Jadvallarni yuklab olish</h5>
+                  <p>
+                    Jadvallarni oflayn ko'rish uchun PDF formatida yuklab
+                    olishingiz mumkin. Shuningdek, o'z taqvimingizga ulash uchun
+                    iCal formatini ham tanlashingiz mumkin. Bu Google Calendar,
+                    Apple Calendar yoki Outlook kabi taqvim ilovalariga mos
+                    keladi.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Support -->
+        <div class="row mb-5" id="contact">
+          <div class="col-md-6">
+            <h3 class="mb-4">Qo'shimcha yordam kerakmi?</h3>
+            <p>
+              Agar siz bu yerda javob topa olmagan bo'lsangiz, bizga xabar
+              yuboring. Bizning texnik yordam jamoamiz 24 soat ichida javob
+              beradi.
+            </p>
+            <div class="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Ismingiz</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="To'liq ismingiz"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Elektron pochta</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Elektron pochta manzilingiz"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="topic" class="form-label">Mavzu</label>
+                <select class="form-select" id="topic">
+                  <option selected>Mavzuni tanlang</option>
+                  <option>Dars jadvallari</option>
+                  <option>Tizimga kirish</option>
+                  <option>Mobil ilova</option>
+                  <option>Texnik nosozlik</option>
+                  <option>Boshqa</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Xabar matni</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Muammoingizni batafsil tasvirlang"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Yuborish</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="mb-4">Bog'lanish ma'lumotlari</h3>
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-4">
+                  Bizga quyidagi usullar orqali bog'lanishingiz mumkin
+                </h5>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <strong>Manzil:</strong>
+                    <p>
+                      Toshkent shahri, Universitet ko'chasi, 4, Tatuff o'quv
+                      binosi
+                    </p>
+                  </li>
+                  <li class="mb-3">
+                    <strong>Telefon:</strong>
+                    <p>+998 71 123-45-67</p>
+                  </li>
+                  <li class="mb-3">
+                    <strong>Email:</strong>
+                    <p>support@tatuff.edu.uz</p>
+                  </li>
+                  <li class="mb-3">
+                    <strong>Ish vaqti:</strong>
+                    <p>Dushanba - Juma, 9:00 - 18:00</p>
+                  </li>
+                </ul>
+                <div class="mt-4">
+                  <h6>Ijtimoiy tarmoqlar</h6>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary">Telegram</button>
+                    <button class="btn btn-outline-primary">Facebook</button>
+                    <button class="btn btn-outline-primary">Instagram</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tatuff dars jadvallari</h5>
+            <p>
+              Dars jadvallarini ko'rish va boshqarish uchun zamonaviy platforma
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Tezkor havolalar</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="./jadvallar_page.html" class="text-white">Jadvallar</a>
+              </li>
+              <li>
+                <a href="./fakultetlar_page.html" class="text-white"
+                  >Fakultetlar</a
+                >
+              </li>
+              <li>
+                <a href="./news_page.html" class="text-white">Yangiliklar</a>
+              </li>
+              <li><a href="./help_page.html" class="text-white">Yordam</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Bog'lanish</h5>
+            <p>Manzil: Toshkent shahri, Universitet ko'chasi, 4</p>
+            <p>Telefon: +998 71 123-45-67</p>
+            <p>Email: info@tatuff.edu.uz</p>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light" />
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0">
+              © 2025 Tatuff dars jadvallari. Barcha huquqlar himoyalangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Scroll to sections when clicking on category buttons
+        const categoryLinks = document.querySelectorAll(
+          ".help-category-card .btn"
+        );
+        categoryLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Video play buttons
+        const videoButtons = document.querySelectorAll(".video-tutorial .btn");
+        videoButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            alert("Video hozircha mavjud emas. Tez orada qo'shiladi.");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

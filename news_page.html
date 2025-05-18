@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yangiliklar - Tatuff dars jadvallari</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/news.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">TATUFF DARS JADVALLARI</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bosh sahifa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./jadvallar_page.html">Jadvallar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./fakultetlar_page.html">Fakultetlar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./news_page.html">Yangiliklar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./help_page.html">Yordam</a>
+            </li>
+          </ul>
+          <button class="btn btn-light ms-3">Kirish</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Yangiliklar va e'lonlar</h1>
+        <p class="lead">
+          Tatuff o'quv markazidagi eng so'nggi yangiliklar, e'lonlar va
+          o'zgarishlar
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <!-- Search and Filter -->
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Yangiliklar qidirish..."
+              />
+              <button class="btn btn-primary" type="button">Qidirish</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="category-filter text-md-end">
+              <button class="btn btn-primary active">Barchasi</button>
+              <button class="btn btn-outline-primary">E'lonlar</button>
+              <button class="btn btn-outline-primary">O'zgarishlar</button>
+              <button class="btn btn-outline-primary">Tadbirlar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured News -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="card featured-news">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img
+                      src="/api/placeholder/400/300"
+                      alt="Yangi o'quv yili marosimi"
+                      class="img-fluid news-img w-100"
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <span class="news-tag">Muhim</span>
+                    <h3 class="card-title mt-2">
+                      2025/2026 o'quv yili dars jadvallari yangilandi
+                    </h3>
+                    <p class="news-date">18.05.2025</p>
+                    <p class="card-text">
+                      Hurmatli talabalar va professor-o'qituvchilar! Tatuff
+                      o'quv markazining barcha fakultet va yo'nalishlari uchun
+                      2025/2026 o'quv yilining yangi dars jadvallari e'lon
+                      qilindi. Jadvallarni ko'rish uchun o'z fakultetingiz
+                      bo'limiga o'ting yoki qidiruv tizimidan foydalaning.
+                    </p>
+                    <p>
+                      Jadvallar har bir guruh uchun alohida ishlab chiqilgan
+                      bo'lib, talabalar va o'qituvchilar vaqtidan samarali
+                      foydalanish imkoniyati yaratilgan.
+                    </p>
+                    <a href="#" class="btn btn-primary">Batafsil</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Grid -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <span class="news-tag">E'lon</span>
+                <h4 class="card-title mt-2">
+                  Yozgi ta'til davridagi qo'shimcha kurslar
+                </h4>
+                <p class="news-date">15.05.2025</p>
+                <p class="card-text">
+                  Yozgi ta'til davrida Tatuff o'quv markazi tomonidan tashkil
+                  etiladigan qo'shimcha kurslar bo'yicha ma'lumot. Ro'yxatdan
+                  o'tish va dars jadvallari.
+                </p>
+                <a href="#" class="btn btn-primary">Batafsil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <span class="news-tag">O'zgarish</span>
+                <h4 class="card-title mt-2">
+                  Imtihon jadvallari o'zgarishlari
+                </h4>
+                <p class="news-date">12.05.2025</p>
+                <p class="card-text">
+                  Diqqat! 20-25 may kunlari bo'lib o'tadigan imtihonlar
+                  jadvalida o'zgarishlar kiritildi. Barcha o'zgarishlar va yangi
+                  jadval bilan tanishing.
+                </p>
+                <a href="#" class="btn btn-primary">Batafsil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <span class="news-tag">Yangilik</span>
+                <h4 class="card-title mt-2">Mobil ilova ishga tushirildi</h4>
+                <p class="news-date">10.05.2025</p>
+                <p class="card-text">
+                  Endi dars jadvallarini mobil ilovamiz orqali ham ko'rishingiz
+                  mumkin. Android va iOS versiyalari mavjud. Ilovani yuklab
+                  olish va foydalanish bo'yicha qo'llanma.
+                </p>
+                <a href="#" class="btn btn-primary">Batafsil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <span class="news-tag">Tadbir</span>
+                <h4 class="card-title mt-2">Yakuniy loyihalar taqdimoti</h4>
+                <p class="news-date">08.05.2025</p>
+                <p class="card-text">
+                  5-6 iyun kunlari 4-kurs talabalari yakuniy loyihalar taqdimoti
+                  bo'lib o'tadi. Taqdimotlar joylashuvi va vaqti haqida
+                  ma'lumot.
+                </p>
+                <a href="#" class="btn btn-primary">Batafsil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <span class="news-tag">E'lon</span>
+                <h4 class="card-title mt-2">
+                  Auditoriyalar bo'yicha o'zgarishlar
+                </h4>
+                <p class="news-date">05.05.2025</p>
+                <p class="card-text">
+                  24-28 may kunlari ayrim auditoriyalarda ta'mirlash ishlari
+                  olib borilishi tufayli darslar boshqa auditoriyalarga
+                  ko'chirildi.
+                </p>
+                <a href="#" class="btn btn-primary">Batafsil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <span class="news-tag">Yangilik</span>
+                <h4 class="card-title mt-2">Talabalar uchun yangi xizmat</h4>
+                <p class="news-date">01.05.2025</p>
+                <p class="card-text">
+                  Dars jadvallarini avtomatik ravishda taqvimingizga ulash va
+                  eslatmalar olish imkoniyati joriy etildi. Xizmatdan qanday
+                  foydalanish bo'yicha qo'llanma.
+                </p>
+                <a href="#" class="btn btn-primary">Batafsil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Oldingi</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Keyingi</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body text-center py-4">
+                <h4>
+                  Yangiliklar va e'lonlardan xabardor bo'lish uchun obuna
+                  bo'ling
+                </h4>
+                <p>
+                  Eng so'nggi yangiliklar va dars jadvallaridagi o'zgarishlarni
+                  elektron pochtangizga olish uchun obuna bo'ling.
+                </p>
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Elektron pochta manzilingiz"
+                      />
+                      <button class="btn btn-primary" type="button">
+                        Obuna bo'lish
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tatuff dars jadvallari</h5>
+            <p>
+              Dars jadvallarini ko'rish va boshqarish uchun zamonaviy platforma
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Tezkor havolalar</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="./jadvallar_page.html" class="text-white">Jadvallar</a>
+              </li>
+              <li>
+                <a href="./fakultetlar_page.html" class="text-white"
+                  >Fakultetlar</a
+                >
+              </li>
+              <li>
+                <a href="./news_page.html" class="text-white">Yangiliklar</a>
+              </li>
+              <li><a href="./help_page.html" class="text-white">Yordam</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Bog'lanish</h5>
+            <p>Manzil: Toshkent shahri, Universitet ko'chasi, 4</p>
+            <p>Telefon: +998 71 123-45-67</p>
+            <p>Email: info@tatuff.edu.uz</p>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light" />
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0">
+              © 2025 Tatuff dars jadvallari. Barcha huquqlar himoyalangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Filter buttons functionality
+        const filterButtons = document.querySelectorAll(
+          ".category-filter .btn"
+        );
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            filterButtons.forEach((btn) => {
+              if (
+                btn.classList.contains("btn-primary") &&
+                !btn.classList.contains("active")
+              ) {
+                btn.classList.remove("btn-primary");
+                btn.classList.add("btn-outline-primary");
+              }
+            });
+            this.classList.add("active");
+            if (this.classList.contains("btn-outline-primary")) {
+              this.classList.remove("btn-outline-primary");
+              this.classList.add("btn-primary");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

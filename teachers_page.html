@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'qituvchilar bo'yicha jadval - Tatuff dars jadvallari</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --secondary: #43a047;
+            --light-bg: #f5f7fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        .main-content {
+            padding: 2rem 0;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-success {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        .timetable-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .day-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .lesson-card {
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 10px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+        }
+        .teacher-card {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .teacher-card:hover {
+            border-color: var(--primary);
+        }
+        .teacher-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .teacher-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .department-filter {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">TATUFF DARS JADVALLARI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Bosh sahifa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jadvallar_page.html">Jadvallar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fakultetlar_page.html">Fakultetlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news_page.html">Yangiliklar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help_page.html">Yordam</a>
+                    </li>
+                </ul>
+                <button class="btn btn-light ms-3">Kirish</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <h1 class="fw-bold">O'qituvchilar bo'yicha jadval</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Bosh sahifa</a></li>
+                            <li class="breadcrumb-item"><a href="jadvallar_page.html">Jadvallar</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">O'qituvchilar bo'yicha</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="searchTeacher" class="form-label">O'qituvchi ismi bo'yicha qidirish</label>
+                                    <input type="text" class="form-control" id="searchTeacher" placeholder="Masalan: Usmonov A.B.">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="departmentFilter" class="form-label">Kafedra bo'yicha filtrlash</label>
+                                    <select id="departmentFilter" class="form-select">
+                                        <option selected value="">Barcha kafedralar</option>
+                                        <option>Matematika kafedrasi</option>
+                                        <option>Fizika kafedrasi</option>
+                                        <option>Informatika kafedrasi</option>
+                                        <option>Ingliz tili kafedrasi</option>
+                                        <option>Tarix kafedrasi</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100">Qidirish</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teacher List and Timetable -->
+            <div class="row">
+                <!-- Teacher List -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">O'qituvchilar ro'yxati</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="department-filter p-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">Matematika kafedrasi</h6>
+                                    <span class="badge bg-primary">5 nafar</span>
+                                </div>
+                            </div>
+                            <div class="teacher-list">
+                                <div class="teacher-card p-3 border-bottom" onclick="showTeacherTimetable('Usmonov A.B.')">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/80/80" alt="O'qituvchi rasmi" class="teacher-img me-3">
+                                        <div>
+                                            <h6 class="mb-1">Usmonov Abror Botirovich</h6>
+                                            <p class="text-muted mb-0">Matematika, dotsent</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="teacher-card p-3 border-bottom" onclick="showTeacherTimetable('Karimova M.S.')">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/80/80" alt="O'qituvchi rasmi" class="teacher-img me-3">
+                                        <div>
+                                            <h6 class="mb-1">Karimova Malohat Sobirovna</h6>
+                                            <p class="text-muted mb-0">Matematika, professor</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="teacher-card p-3 border-bottom" onclick="showTeacherTimetable('Zokirov T.Z.')">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/80/80" alt="O'qituvchi rasmi" class="teacher-img me-3">
+                                        <div>
+                                            <h6 class="mb-1">Zokirov Tohir Zohidovich</h6>
+                                            <p class="text-muted mb-0">Matematika, katta o'qituvchi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="teacher-card p-3 border-bottom" onclick="showTeacherTimetable('Aliyev B.R.')">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/80/80" alt="O'qituvchi rasmi" class="teacher-img me-3">
+                                        <div>
+                                            <h6 class="mb-1">Aliyev Bobur Rustamovich</h6>
+                                            <p class="text-muted mb-0">Matematika, o'qituvchi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="teacher-card p-3" onclick="showTeacherTimetable('Mahmudova K.O.')">
+                                    <div class="d-flex align-items-center">
+                                        <img src="/api/placeholder/80/80" alt="O'qituvchi rasmi" class="teacher-img me-3">
+                                        <div>
+                                            <h6 class="mb-1">Mahmudova Kamola Olimovna</h6>
+                                            <p class="text-muted mb-0">Matematika, o'qituvchi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-outline-primary">Ko'proq ko'rsatish</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Timetable -->
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Usmonov Abror Botirovich - Dars jadvali</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-primary" role="alert">
+                                <div class="d-flex align-items-center">
+                                    <img src="/api/placeholder/80/80" alt="O'qituvchi rasmi" class="teacher-img me-3">
+                                    <div>
+                                        <h5 class="alert-heading">Usmonov Abror Botirovich</h5>
+                                        <p class="mb-0">Matematika kafedrasi, dotsent</p>
+                                        <p class="mb-0">Email: usmonov@tatuff.edu.uz</p>
+                                        <p class="mb-0">Telefon: +998 90 123-45-67</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timetable-tabs mt-4 mb-3">
+                                <ul class="nav nav-tabs" id="timetableTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="week-tab" data-bs-toggle="tab" data-bs-target="#week" type="button" role="tab" aria-controls="week" aria-selected="true">Haftalik</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="today-tab" data-bs-toggle="tab" data-bs-target="#today" type="button" role="tab" aria-controls="today" aria-selected="false">Bugun</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content" id="timetableContent">
+                                <div class="tab-pane fade show active" id="week" role="tabpanel" aria-labelledby="week-tab">
+                                    <!-- Monday Timetable -->
+                                    <div class="timetable-container mb-4">
+                                        <div class="day-header">
+                                            <h4 class="mb-0">Dushanba</h4>
+                                        </div>
+                                        <div class="lessons">
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>08:30 - 09:50</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Matematika</h5>
+                                                        <small>Ma'ruza</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">201-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">301-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>10:00 - 11:20</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Matematika</h5>
+                                                        <small>Ma'ruza</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">202-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">301-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tuesday Timetable -->
+                                    <div class="timetable-container mb-4">
+                                        <div class="day-header">
+                                            <h4 class="mb-0">Seshanba</h4>
+                                        </div>
+                                        <div class="lessons">
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>08:30 - 09:50</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Oliy matematika</h5>
+                                                        <small>Amaliy mashg'ulot</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">101-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">305-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>11:30 - 12:50</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Oliy matematika</h5>
+                                                        <small>Amaliy mashg'ulot</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">102-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">305-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Other days with "No classes" message -->
+                                    <div class="timetable-container mb-4">
+                                        <div class="day-header">
+                                            <h4 class="mb-0">Chorshanba</h4>
+                                        </div>
+                                        <div class="lessons">
+                                            <div class="alert alert-light text-center m-3">
+                                                Dars mashg'ulotlari yo'q
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="timetable-container mb-4">
+                                        <div class="day-header">
+                                            <h4 class="mb-0">Payshanba</h4>
+                                        </div>
+                                        <div class="lessons">
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>08:30 - 09:50</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Matematika</h5>
+                                                        <small>Ma'ruza</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">203-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">301-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="timetable-container">
+                                        <div class="day-header">
+                                            <h4 class="mb-0">Juma</h4>
+                                        </div>
+                                        <div class="lessons">
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>10:00 - 11:20</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Oliy matematika</h5>
+                                                        <small>Amaliy mashg'ulot</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">103-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">305-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="today" role="tabpanel" aria-labelledby="today-tab">
+                                    <div class="timetable-container">
+                                        <div class="day-header">
+                                            <h4 class="mb-0">Bugun - Dushanba</h4>
+                                        </div>
+                                        <div class="lessons">
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>08:30 - 09:50</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Matematika</h5>
+                                                        <small>Ma'ruza</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">201-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">301-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="lesson-card">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <strong>10:00 - 11:20</strong>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h5 class="mb-0">Matematika</h5>
+                                                        <small>Ma'ruza</small>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">202-guruh</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <p class="mb-0">301-auditoriya</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <button class="btn btn-outline-primary">
+                                <i class="bi bi-download"></i> PDF yuklab olish
+                            </button>
+                            <button class="btn btn-outline-success">
+                                <i class="bi bi-calendar"></i> Taqvimga qo'shish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Tatuff dars jadvallari</h5>
+                    <p>Dars jadvallarini ko'rish va boshqarish uchun zamonaviy platforma</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Tezkor havolalar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="jadvallar_page.html" class="text-white">Jadvallar</a></li>
+                        <li><a href="fakultetlar_page.html" class="text-white">Fakultetlar</a></li>
+                        <li><a href="help_page.html" class="text-white">Yordam</a></li>
+                        <li><a href="#" class="text-white">Bog'lanish</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Bog'lanish</h5>
+                    <p>Manzil: Toshkent shahri, Universitet ko'chasi, 4</p>
+                    <p>Telefon: +998 71 123-45-67</p>
+                    <p>Email: info@tatuff.edu.uz</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4 bg-light">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">© 2025 Tatuff dars jadvallari. Barcha huquqlar himoyalangan.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Teachers page loaded!');
+        });
+
+        function showTeacherTimetable(teacherName) {
+            // In a real application, this would fetch the teacher's timetable from a server
+            console.log(`Showing timetable for ${teacherName}`);
+            
+            // For demo purposes, we just show an alert
+            // In a real app, this would update the timetable section with the teacher's data
+            alert(`${teacherName} jadvali yuklanmoqda...`);
+        }
+    </script>
+</body>
+</html>

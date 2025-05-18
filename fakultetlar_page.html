@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatuff dars jadvallari - Fakultetlar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/fakultetlar.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">TATUFF DARS JADVALLARI</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bosh sahifa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./jadvallar_page.html">Jadvallar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./fakultetlar_page.html"
+                >Fakultetlar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./news_page.html">Yangiliklar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./help_page.html">Yordam</a>
+            </li>
+          </ul>
+          <a href="login.html" class="btn btn-light ms-3">Kirish</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <!-- Page Title -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <h1 class="fw-bold">Fakultetlar va yo'nalishlar</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="./index.html">Bosh sahifa</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Fakultetlar
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Faculty Search -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Fakultet yoki yo'nalish nomi bo'yicha qidirish..."
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary w-100">Qidirish</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty List -->
+        <div class="row mb-5">
+          <!-- Faculty 1 -->
+          <div class="col-md-6 col-lg-4 faculty-card">
+            <div class="card h-100">
+              <img
+                src="/api/placeholder/800/400"
+                class="faculty-img"
+                alt="Kompyuter injiniringi"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Kompyuter injiniringi fakulteti</h4>
+                <p class="card-text">
+                  Zamonaviy kompyuter tizimlari va dasturiy ta'minot injiniringi
+                  sohasidagi bilimlarni o'rgatuvchi fakultet.
+                </p>
+
+                <h5 class="mt-4 mb-3">Yo'nalishlar:</h5>
+                <ul class="department-list">
+                  <li>Kompyuter injiniringi</li>
+                  <li>Axborot tizimlari</li>
+                  <li>Multimedia texnologiyalari</li>
+                  <li>Kompyuter grafikasi</li>
+                </ul>
+
+                <div class="faculty-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">O'qituvchilar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">450</div>
+                    <div class="stat-label">Talabalar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Auditoriyalar</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary">Fakultet jadvali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty 2 -->
+          <div class="col-md-6 col-lg-4 faculty-card">
+            <div class="card h-100">
+              <img
+                src="/api/placeholder/800/400"
+                class="faculty-img"
+                alt="Dasturiy injiniring"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Dasturiy injiniring fakulteti</h4>
+                <p class="card-text">
+                  Yuqori sifatli dasturiy mahsulotlarni ishlab chiqish va ularni
+                  boshqarish bo'yicha mutaxassislarni tayyorlaydigan fakultet.
+                </p>
+
+                <h5 class="mt-4 mb-3">Yo'nalishlar:</h5>
+                <ul class="department-list">
+                  <li>Dasturiy injiniring</li>
+                  <li>Dasturiy mahsulotlar va komplekslar</li>
+                  <li>Mobil ilovalar ishlab chiqish</li>
+                  <li>Web dasturlash</li>
+                </ul>
+
+                <div class="faculty-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">32</div>
+                    <div class="stat-label">O'qituvchilar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">520</div>
+                    <div class="stat-label">Talabalar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">Auditoriyalar</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary">Fakultet jadvali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty 3 -->
+          <div class="col-md-6 col-lg-4 faculty-card">
+            <div class="card h-100">
+              <img
+                src="/api/placeholder/800/400"
+                class="faculty-img"
+                alt="Telekommunikatsiya"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Telekommunikatsiya fakulteti</h4>
+                <p class="card-text">
+                  Aloqa tizimlari, tarmoq texnologiyalari va ma'lumotlarni
+                  uzatish sohasida mutaxassislarni tayyorlovchi fakultet.
+                </p>
+
+                <h5 class="mt-4 mb-3">Yo'nalishlar:</h5>
+                <ul class="department-list">
+                  <li>Telekommunikatsiya texnologiyalari</li>
+                  <li>Mobil aloqa tizimlari</li>
+                  <li>Radio va televideniye</li>
+                  <li>Optik aloqa tizimlari</li>
+                </ul>
+
+                <div class="faculty-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">28</div>
+                    <div class="stat-label">O'qituvchilar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">480</div>
+                    <div class="stat-label">Talabalar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">14</div>
+                    <div class="stat-label">Auditoriyalar</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary">Fakultet jadvali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty 4 -->
+          <div class="col-md-6 col-lg-4 faculty-card">
+            <div class="card h-100">
+              <img
+                src="/api/placeholder/800/400"
+                class="faculty-img"
+                alt="Axborot xavfsizligi"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Axborot xavfsizligi fakulteti</h4>
+                <p class="card-text">
+                  Kompyuter tarmoqlari va axborot tizimlari xavfsizligini
+                  ta'minlash bo'yicha mutaxassislarni tayyorlaydigan fakultet.
+                </p>
+
+                <h5 class="mt-4 mb-3">Yo'nalishlar:</h5>
+                <ul class="department-list">
+                  <li>Axborot xavfsizligi</li>
+                  <li>Kriptografiya va kriptoanaliz</li>
+                  <li>Tarmoq xavfsizligi</li>
+                  <li>Kompyuter jinoyatlarining oldini olish</li>
+                </ul>
+
+                <div class="faculty-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">22</div>
+                    <div class="stat-label">O'qituvchilar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">380</div>
+                    <div class="stat-label">Talabalar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">Auditoriyalar</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary">Fakultet jadvali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty 5 -->
+          <div class="col-md-6 col-lg-4 faculty-card">
+            <div class="card h-100">
+              <img
+                src="/api/placeholder/800/400"
+                class="faculty-img"
+                alt="Raqamli iqtisodiyot"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Raqamli iqtisodiyot fakulteti</h4>
+                <p class="card-text">
+                  Zamonaviy raqamli texnologiyalar asosida iqtisodiyot va
+                  biznesni rivojlantirish bo'yicha mutaxassislarni
+                  tayyorlaydigan fakultet.
+                </p>
+
+                <h5 class="mt-4 mb-3">Yo'nalishlar:</h5>
+                <ul class="department-list">
+                  <li>Raqamli iqtisodiyot</li>
+                  <li>Elektron tijorat</li>
+                  <li>Biznes-analitika</li>
+                  <li>Raqamli marketing</li>
+                </ul>
+
+                <div class="faculty-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">26</div>
+                    <div class="stat-label">O'qituvchilar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">420</div>
+                    <div class="stat-label">Talabalar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">11</div>
+                    <div class="stat-label">Auditoriyalar</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary">Fakultet jadvali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty 6 -->
+          <div class="col-md-6 col-lg-4 faculty-card">
+            <div class="card h-100">
+              <img
+                src="/api/placeholder/800/400"
+                class="faculty-img"
+                alt="Sun'iy intellekt"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Sun'iy intellekt fakulteti</h4>
+                <p class="card-text">
+                  Sun'iy intellekt tizimlari, mashinali o'rganish va ma'lumotlar
+                  tahlili sohasidagi mutaxassislarni tayyorlaydigan fakultet.
+                </p>
+
+                <h5 class="mt-4 mb-3">Yo'nalishlar:</h5>
+                <ul class="department-list">
+                  <li>Sun'iy intellekt tizimlari</li>
+                  <li>Mashinali o'rganish</li>
+                  <li>Katta ma'lumotlar tahlili</li>
+                  <li>Robotlashtirish</li>
+                </ul>
+
+                <div class="faculty-stats">
+                  <div class="stat-item">
+                    <div class="stat-value">20</div>
+                    <div class="stat-label">O'qituvchilar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">350</div>
+                    <div class="stat-label">Talabalar</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-value">9</div>
+                    <div class="stat-label">Auditoriyalar</div>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <a href="#" class="btn btn-primary">Fakultet jadvali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Statistics -->
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Universitet statistikasi</h5>
+              </div>
+              <div class="card-body">
+                <div class="row text-center">
+                  <div class="col-md-3 mb-3">
+                    <h2 class="display-4 text-primary">6</h2>
+                    <p class="lead">Fakultet</p>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <h2 class="display-4 text-primary">24</h2>
+                    <p class="lead">Mutaxassislik</p>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <h2 class="display-4 text-primary">152</h2>
+                    <p class="lead">O'qituvchilar</p>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <h2 class="display-4 text-primary">2600</h2>
+                    <p class="lead">Talabalar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Map -->
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <h3 class="mb-4">Fakultetlar joylashuvi</h3>
+            <div class="card">
+              <div class="card-body p-0">
+                <img
+                  src="/api/placeholder/1200/500"
+                  alt="Fakultetlar xaritasi"
+                  class="img-fluid w-100"
+                />
+              </div>
+              <div class="card-footer text-center">
+                <button class="btn btn-primary">
+                  Interaktiv xaritani ochish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tatuff dars jadvallari</h5>
+            <p>
+              Dars jadvallarini ko'rish va boshqarish uchun zamonaviy platforma
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Tezkor havolalar</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="./jadvallar_page.html" class="text-white">Jadvallar</a>
+              </li>
+              <li>
+                <a href="./fakultetlar_page.html" class="text-white"
+                  >Fakultetlar</a
+                >
+              </li>
+              <li><a href="./help_page.html" class="text-white">Yordam</a></li>
+              <li><a href="contact.html" class="text-white">Bog'lanish</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Bog'lanish</h5>
+            <p>Manzil: Toshkent shahri, Universitet ko'chasi, 4</p>
+            <p>Telefon: +998 71 123-45-67</p>
+            <p>Email: info@tatuff.edu.uz</p>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light" />
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0">
+              © 2025 Tatuff dars jadvallari. Barcha huquqlar himoyalangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Faculty card click
+        const facultyLinks = document.querySelectorAll(
+          ".faculty-card .btn-primary"
+        );
+        facultyLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const facultyName =
+              this.closest(".card").querySelector(".card-title").textContent;
+            alert(`${facultyName} fakulteti jadvali tez orada yuklanadi...`);
+          });
+        });
+
+        // Search functionality
+        const searchBtn = document.querySelector(".card-body .btn-primary");
+        searchBtn.addEventListener("click", function () {
+          const searchTerm = document.querySelector(".form-control").value;
+          if (searchTerm.trim() !== "") {
+            alert(`"${searchTerm}" so'zi bo'yicha qidirilmoqda...`);
+          } else {
+            alert("Qidiruv uchun kalit so'z kiriting!");
+          }
+        });
+
+        // Interactive map button
+        const mapBtn = document.querySelector(".card-footer .btn-primary");
+        mapBtn.addEventListener("click", function () {
+          alert("Interaktiv xarita tez orada qo'shiladi!");
+        });
+      });
+    </script>
+  </body>
+</html>

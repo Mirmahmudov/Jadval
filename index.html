@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatuff dars jadvallari</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">TATUFF DARS JADVALLARI</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./index.html">Bosh sahifa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./jadvallar_page.html">Jadvallar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./fakultetlar_page.html">Fakultetlar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./news_page.html">Yangiliklar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./help_page.html">Yordam</a>
+            </li>
+          </ul>
+          <button class="btn btn-light ms-3">Kirish</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <!-- Hero Section -->
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <h1 class="display-4 fw-bold">Tatuff Dars Jadvallari</h1>
+            <p class="lead">
+              Barcha dars jadvallarini qulay ko'rinishda kuzatib boring
+            </p>
+            <div class="mt-4">
+              <button class="btn btn-primary btn-lg me-2">
+                Jadvallarni ko'rish
+              </button>
+              <button class="btn btn-success btn-lg">Tizimga kirish</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <form class="row g-3">
+                  <div class="col-md-4">
+                    <label for="searchType" class="form-label"
+                      >Qidiruv turi</label
+                    >
+                    <select id="searchType" class="form-select">
+                      <option selected>Tanlang...</option>
+                      <option>Guruh bo'yicha</option>
+                      <option>O'qituvchi bo'yicha</option>
+                      <option>Auditoriya bo'yicha</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="searchValue" class="form-label"
+                      >Qidiruv so'zi</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="searchValue"
+                      placeholder="Masalan: 201-guruh"
+                    />
+                  </div>
+                  <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                      Qidirish
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Access Cards -->
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="mb-0">Guruhlar bo'yicha jadval</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  O'zingizning guruhingiz yoki boshqa guruh jadvalini ko'rish
+                  uchun tanlang.
+                </p>
+                <button class="btn btn-primary">Tanlash</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="mb-0">O'qituvchilar bo'yicha jadval</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  O'qituvchining nomini kiritib, uning dars jadvalini ko'ring.
+                </p>
+                <button class="btn btn-primary">Tanlash</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="mb-0">Auditoriyalar bo'yicha jadval</h5>
+              </div>
+              <div class="card-body">
+                <p>
+                  Bo'sh auditoriyalarni topish yoki ma'lum auditoriya jadvalini
+                  ko'rish.
+                </p>
+                <button class="btn btn-primary">Tanlash</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Timetable -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <h3 class="mb-4">Namunali dars jadvali</h3>
+            <div class="timetable-container">
+              <div class="day-header">
+                <h4 class="mb-0">Dushanba</h4>
+              </div>
+              <div class="lessons">
+                <div class="lesson-card">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <strong>08:30 - 09:50</strong>
+                    </div>
+                    <div class="col-md-4">
+                      <h5 class="mb-0">Matematika</h5>
+                      <small>Ma'ruza</small>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="mb-0">Usmonov A.B.</p>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="mb-0">301-auditoriya</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lesson-card">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <strong>10:00 - 11:20</strong>
+                    </div>
+                    <div class="col-md-4">
+                      <h5 class="mb-0">Dasturlash asoslari</h5>
+                      <small>Amaliy mashg'ulot</small>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="mb-0">Karimov B.S.</p>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="mb-0">205-auditoriya</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="lesson-card">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <strong>11:30 - 12:50</strong>
+                    </div>
+                    <div class="col-md-4">
+                      <h5 class="mb-0">Ingliz tili</h5>
+                      <small>Amaliy mashg'ulot</small>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="mb-0">Smith J.</p>
+                    </div>
+                    <div class="col-md-3">
+                      <p class="mb-0">401-auditoriya</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- News and Updates -->
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="mb-4">Yangiliklar va e'lonlar</h3>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Dars jadvalida o'zgarishlar</h5>
+                <h6 class="card-subtitle mb-2 text-muted">15.05.2025</h6>
+                <p class="card-text">
+                  Hurmatli talabalar! 18-20 may kunlari imtihonlar tufayli dars
+                  jadvallari yangilandi. Iltimos, jadvallarni tekshirib ko'ring.
+                </p>
+                <a href="#" class="card-link">Batafsil</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Mobil ilova ishga tushirildi</h5>
+                <h6 class="card-subtitle mb-2 text-muted">10.05.2025</h6>
+                <p class="card-text">
+                  Endi dars jadvallarini mobil ilovamiz orqali ham ko'rishingiz
+                  mumkin. Android va iOS versiyalari mavjud.
+                </p>
+                <a href="#" class="card-link">Batafsil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tatuff dars jadvallari</h5>
+            <p>
+              Dars jadvallarini ko'rish va boshqarish uchun zamonaviy platforma
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Tezkor havolalar</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Jadvallar</a></li>
+              <li><a href="#" class="text-white">Fakultetlar</a></li>
+              <li><a href="#" class="text-white">Yordam</a></li>
+              <li><a href="#" class="text-white">Bog'lanish</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Bog'lanish</h5>
+            <p>Manzil: Toshkent shahri, Universitet ko'chasi, 4</p>
+            <p>Telefon: +998 71 123-45-67</p>
+            <p>Email: info@tatuff.edu.uz</p>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light" />
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0">
+              © 2025 Tatuff dars jadvallari. Barcha huquqlar himoyalangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Placeholder for future JavaScript functionality
+        console.log("Timetable system loaded!");
+
+        // Example: Toggle between different views
+        const viewButtons = document.querySelectorAll(".btn-primary");
+        viewButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            alert("Bu funksiya hozircha ishga tushirilmagan");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

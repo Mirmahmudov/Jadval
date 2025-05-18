@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatuff dars jadvallari - Jadvallar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/jadvallar.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">TATUFF DARS JADVALLARI</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bosh sahifa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./jadvallar_page.html"
+                >Jadvallar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./fakultetlar_page.html">Fakultetlar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./news_page.html">Yangiliklar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./help_page.html">Yordam</a>
+            </li>
+          </ul>
+          <a href="login.html" class="btn btn-light ms-3">Kirish</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <!-- Page Title -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <h1 class="fw-bold">Dars jadvallari</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="./index.html">Bosh sahifa</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Jadvallar
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <form class="row g-3">
+                  <div class="col-md-3">
+                    <label for="searchType" class="form-label"
+                      >Qidiruv turi</label
+                    >
+                    <select id="searchType" class="form-select">
+                      <option value="group" selected>Guruh bo'yicha</option>
+                      <option value="teacher">O'qituvchi bo'yicha</option>
+                      <option value="room">Auditoriya bo'yicha</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="faculty" class="form-label">Fakultet</label>
+                    <select id="faculty" class="form-select">
+                      <option selected>Barcha fakultetlar</option>
+                      <option>Kompyuter injiniringi</option>
+                      <option>Dasturiy injiniring</option>
+                      <option>Telekomminikatsiya</option>
+                      <option>Axborot xavfsizligi</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="searchValue" class="form-label"
+                      >Qidiruv so'zi</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="searchValue"
+                      placeholder="Masalan: 201-guruh"
+                    />
+                  </div>
+                  <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                      Qidirish
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timetable Tabs -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <ul class="nav nav-tabs" id="timetableTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="daily-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#daily"
+                  type="button"
+                  role="tab"
+                  aria-controls="daily"
+                  aria-selected="true"
+                >
+                  Kunlik jadval
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="weekly-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#weekly"
+                  type="button"
+                  role="tab"
+                  aria-controls="weekly"
+                  aria-selected="false"
+                >
+                  Haftalik jadval
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="monthly-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#monthly"
+                  type="button"
+                  role="tab"
+                  aria-controls="monthly"
+                  aria-selected="false"
+                >
+                  Oylik jadval
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="timetableTabsContent">
+              <!-- Daily Timetable -->
+              <div
+                class="tab-pane fade show active"
+                id="daily"
+                role="tabpanel"
+                aria-labelledby="daily-tab"
+              >
+                <div class="row mb-3">
+                  <div class="col-md-12">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <h4>Bugungi jadval - 18.05.2025</h4>
+                      <div>
+                        <button class="btn btn-outline-primary me-2">
+                          <i class="bi bi-chevron-left"></i> Oldinga
+                        </button>
+                        <button class="btn btn-outline-primary">
+                          Keyinga <i class="bi bi-chevron-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+                <div class="timetable-container">
+                  <div class="day-header">
+                    <h4 class="mb-0">Dushanba</h4>
+                  </div>
+                  <div class="lessons">
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>08:30 - 09:50</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Matematika</h5>
+                          <small>Ma'ruza</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Usmonov A.B.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">301-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>10:00 - 11:20</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Dasturlash asoslari</h5>
+                          <small>Amaliy mashg'ulot</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Karimov B.S.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">205-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>11:30 - 12:50</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Ingliz tili</h5>
+                          <small>Amaliy mashg'ulot</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Smith J.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">401-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="download-btn text-end">
+                    <button class="btn btn-outline-primary">
+                      <i class="bi bi-download"></i> PDF yuklash
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Weekly Timetable -->
+              <div
+                class="tab-pane fade"
+                id="weekly"
+                role="tabpanel"
+                aria-labelledby="weekly-tab"
+              >
+                <div class="row mb-3">
+                  <div class="col-md-12">
+                    <div class="week-selector">
+                      <h4>13-19 May, 2025</h4>
+                      <div>
+                        <button class="btn btn-outline-primary me-2">
+                          <i class="bi bi-chevron-left"></i> Oldingi hafta
+                        </button>
+                        <button class="btn btn-outline-primary">
+                          Keyingi hafta <i class="bi bi-chevron-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+                <div class="timetable-container">
+                  <div class="day-header">
+                    <h4 class="mb-0">Dushanba - 13.05.2025</h4>
+                  </div>
+                  <div class="lessons">
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>08:30 - 09:50</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Matematika</h5>
+                          <small>Ma'ruza</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Usmonov A.B.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">301-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>10:00 - 11:20</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Dasturlash asoslari</h5>
+                          <small>Amaliy mashg'ulot</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Karimov B.S.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">205-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="day-header mt-4">
+                    <h4 class="mb-0">Seshanba - 14.05.2025</h4>
+                  </div>
+                  <div class="lessons">
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>10:00 - 11:20</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Fizika</h5>
+                          <small>Ma'ruza</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Axmedov R.T.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">402-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>11:30 - 12:50</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Web dasturlash</h5>
+                          <small>Laboratoriya</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Aliyev D.S.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">304-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="day-header mt-4">
+                    <h4 class="mb-0">Chorshanba - 15.05.2025</h4>
+                  </div>
+                  <div class="lessons">
+                    <div class="lesson-card">
+                      <div class="row">
+                        <div class="col-md-2">
+                          <strong>13:30 - 14:50</strong>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="mb-0">Ma'lumotlar bazasi</h5>
+                          <small>Ma'ruza</small>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">Hakimov S.K.</p>
+                        </div>
+                        <div class="col-md-3">
+                          <p class="mb-0">201-auditoriya</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="download-btn text-end">
+                    <button class="btn btn-outline-primary">
+                      <i class="bi bi-download"></i> PDF yuklash
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Monthly Timetable -->
+              <div
+                class="tab-pane fade"
+                id="monthly"
+                role="tabpanel"
+                aria-labelledby="monthly-tab"
+              >
+                <div class="row mb-3">
+                  <div class="col-md-12">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <h4>May, 2025</h4>
+                      <div>
+                        <button class="btn btn-outline-primary me-2">
+                          <i class="bi bi-chevron-left"></i> Oldingi oy
+                        </button>
+                        <button class="btn btn-outline-primary">
+                          Keyingi oy <i class="bi bi-chevron-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+                <div class="calendar-wrapper">
+                  <div class="calendar-grid mb-2">
+                    <div class="weekday-header">Du</div>
+                    <div class="weekday-header">Se</div>
+                    <div class="weekday-header">Cho</div>
+                    <div class="weekday-header">Pa</div>
+                    <div class="weekday-header">Ju</div>
+                    <div class="weekday-header">Sha</div>
+                    <div class="weekday-header">Ya</div>
+                  </div>
+                  <div class="calendar-grid">
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day has-lessons">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day has-lessons">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+
+                    <div class="calendar-day has-lessons">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day has-lessons">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day has-lessons">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+
+                    <div class="calendar-day has-lessons">13</div>
+                    <div class="calendar-day has-lessons">14</div>
+                    <div class="calendar-day has-lessons">15</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day has-lessons">17</div>
+                    <div class="calendar-day today">18</div>
+                    <div class="calendar-day">19</div>
+
+                    <div class="calendar-day has-lessons">20</div>
+                    <div class="calendar-day has-lessons">21</div>
+                    <div class="calendar-day has-lessons">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day has-lessons">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+
+                    <div class="calendar-day has-lessons">27</div>
+                    <div class="calendar-day has-lessons">28</div>
+                    <div class="calendar-day has-lessons">29</div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day has-lessons">31</div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                  </div>
+                  <div class="text-center mt-3">
+                    <small class="text-muted"
+                      >Dars bo'ladigan kunlar ko'k rangda belgilangan. Tanlangan
+                      kun yashil rangda.</small
+                    >
+                  </div>
+                  <div class="download-btn text-end mt-3">
+                    <button class="btn btn-outline-primary">
+                      <i class="bi bi-download"></i> Oylik jadvalni PDF yuklash
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters and Legends -->
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="mb-0">Filtrlar</h5>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">Dars turi</label>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lecture"
+                      checked
+                    />
+                    <label class="form-check-label" for="lecture"
+                      >Ma'ruza</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="practice"
+                      checked
+                    />
+                    <label class="form-check-label" for="practice"
+                      >Amaliy mashg'ulot</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="lab"
+                      checked
+                    />
+                    <label class="form-check-label" for="lab"
+                      >Laboratoriya</label
+                    >
+                  </div>
+                </div>
+                <div>
+                  <label for="semester" class="form-label">Semestr</label>
+                  <select id="semester" class="form-select">
+                    <option selected>Bahorgi semestr (2024-2025)</option>
+                    <option>Kuzgi semestr (2024-2025)</option>
+                    <option>Bahorgi semestr (2023-2024)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header">
+                <h5 class="mb-0">Ma'lumot</h5>
+              </div>
+              <div class="card-body">
+                <div class="alert alert-warning" role="alert">
+                  <strong>Diqqat!</strong> 18-20 may kunlari yakuniy imtihonlar
+                  munosabati bilan dars jadvallari o'zgartirilgan.
+                </div>
+                <p><strong>Dars vaqtlari:</strong></p>
+                <ul>
+                  <li>1-juft: 08:30 - 09:50</li>
+                  <li>2-juft: 10:00 - 11:20</li>
+                  <li>3-juft: 11:30 - 12:50</li>
+                  <li>4-juft: 13:30 - 14:50</li>
+                  <li>5-juft: 15:00 - 16:20</li>
+                  <li>6-juft: 16:30 - 17:50</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Tatuff dars jadvallari</h5>
+            <p>
+              Dars jadvallarini ko'rish va boshqarish uchun zamonaviy platforma
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Tezkor havolalar</h5>
+            <ul class="list-unstyled">
+              <li><a href="./jadvallar_page.html" class="text-white">Jadvallar</a></li>
+              <li>
+                <a href="./fakultetlar_page.html" class="text-white">Fakultetlar</a>
+              </li>
+              <li><a href="./help_page.html" class="text-white">Yordam</a></li>
+              <li><a href="contact.html" class="text-white">Bog'lanish</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Bog'lanish</h5>
+            <p>Manzil: Toshkent shahri, Universitet ko'chasi, 4</p>
+            <p>Telefon: +998 71 123-45-67</p>
+            <p>Email: info@tatuff.edu.uz</p>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4 bg-light" />
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="mb-0">
+              © 2025 Tatuff dars jadvallari. Barcha huquqlar himoyalangan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Timetable system loaded!");
+
+        // Calendar day click handling
+        const calendarDays = document.querySelectorAll(".calendar-day");
+        calendarDays.forEach((day) => {
+          day.addEventListener("click", function () {
+            calendarDays.forEach((d) => d.classList.remove("today"));
+            day.classList.add("today");
+            // Here would be code to load the selected day's timetable
+            alert("Tanlangan sana: May " + day.textContent + ", 2025");
+          });
+        });
+
+        // PDF download button handler
+        const downloadButtons = document.querySelectorAll(
+          ".download-btn button"
+        );
+        downloadButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            alert("PDF yuklab olish funksiyasi hozircha ishga tushirilmagan");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
