@@ -52,11 +52,16 @@
     <!-- Page Header -->
     <div class="page-header">
       <div class="container">
-        <h1 class="display-4 fw-bold">Yangiliklar va e'lonlar</h1>
-        <p class="lead">
-          Tatuff o'quv markazidagi eng so'nggi yangiliklar, e'lonlar va
-          o'zgarishlar
-        </p>
+        <div>
+          <h1 class="display-4 fw-bold">Yangiliklar va e'lonlar</h1>
+          <p class="lead">
+            Tatuff o'quv markazidagi eng so'nggi yangiliklar, e'lonlar va
+            o'zgarishlar
+          </p>
+        </div>
+        <div class="tsa">
+          <h1 id="a">soat</h1>
+        </div>
       </div>
     </div>
 
@@ -86,42 +91,170 @@
         </div>
 
         <!-- Featured News -->
-        <div class="row mb-5">
-          <div class="col-12">
-            <div class="card featured-news">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-4">
-                    <img
-                      src="/api/placeholder/400/300"
-                      alt="Yangi o'quv yili marosimi"
-                      class="img-fluid news-img w-100"
-                    />
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="card featured-news">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img
+                            src="https://static.tuit.uz/uploads/files/c/s/588adde5de733.jpg"
+                            alt="Yangi o'quv yili marosimi"
+                            class="img-fluid news-img w-100"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <span class="news-tag">Muhim</span>
+                          <h3 class="card-title mt-2">
+                            2025/2026 o'quv yili dars jadvallari yangilandi
+                          </h3>
+                          <p class="news-date">18.05.2025</p>
+                          <p class="card-text">
+                            Hurmatli talabalar va professor-o'qituvchilar!
+                            Tatuff o'quv markazining barcha fakultet va
+                            yo'nalishlari uchun 2025/2026 o'quv yilining yangi
+                            dars jadvallari e'lon qilindi. Jadvallarni ko'rish
+                            uchun o'z fakultetingiz bo'limiga o'ting yoki
+                            qidiruv tizimidan foydalaning.
+                          </p>
+                          <p>
+                            Jadvallar har bir guruh uchun alohida ishlab
+                            chiqilgan bo'lib, talabalar va o'qituvchilar
+                            vaqtidan samarali foydalanish imkoniyati yaratilgan.
+                          </p>
+                          <a href="#" class="btn btn-primary">Batafsil</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-md-8">
-                    <span class="news-tag">Muhim</span>
-                    <h3 class="card-title mt-2">
-                      2025/2026 o'quv yili dars jadvallari yangilandi
-                    </h3>
-                    <p class="news-date">18.05.2025</p>
-                    <p class="card-text">
-                      Hurmatli talabalar va professor-o'qituvchilar! Tatuff
-                      o'quv markazining barcha fakultet va yo'nalishlari uchun
-                      2025/2026 o'quv yilining yangi dars jadvallari e'lon
-                      qilindi. Jadvallarni ko'rish uchun o'z fakultetingiz
-                      bo'limiga o'ting yoki qidiruv tizimidan foydalaning.
-                    </p>
-                    <p>
-                      Jadvallar har bir guruh uchun alohida ishlab chiqilgan
-                      bo'lib, talabalar va o'qituvchilar vaqtidan samarali
-                      foydalanish imkoniyati yaratilgan.
-                    </p>
-                    <a href="#" class="btn btn-primary">Batafsil</a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="card featured-news">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img
+                            src="https://static.tuit.uz/uploads/files/c/s/588adde5de733.jpg"
+                            alt="Yangi o'quv yili marosimi"
+                            class="img-fluid news-img w-100"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <span class="news-tag">Muhim</span>
+                          <h3 class="card-title mt-2">
+                            2025/2026 o'quv yili dars jadvallari yangilandi
+                          </h3>
+                          <p class="news-date">18.05.2025</p>
+                          <p class="card-text">
+                            Hurmatli talabalar va professor-o'qituvchilar!
+                            Tatuff o'quv markazining barcha fakultet va
+                            yo'nalishlari uchun 2025/2026 o'quv yilining yangi
+                            dars jadvallari e'lon qilindi. Jadvallarni ko'rish
+                            uchun o'z fakultetingiz bo'limiga o'ting yoki
+                            qidiruv tizimidan foydalaning.
+                          </p>
+                          <p>
+                            Jadvallar har bir guruh uchun alohida ishlab
+                            chiqilgan bo'lib, talabalar va o'qituvchilar
+                            vaqtidan samarali foydalanish imkoniyati yaratilgan.
+                          </p>
+                          <a href="#" class="btn btn-primary">Batafsil</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="card featured-news">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img
+                            src="https://static.tuit.uz/uploads/files/c/s/588adde5de733.jpg"
+                            alt="Yangi o'quv yili marosimi"
+                            class="img-fluid news-img w-100"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <span class="news-tag">Muhim</span>
+                          <h3 class="card-title mt-2">
+                            2025/2026 o'quv yili dars jadvallari yangilandi
+                          </h3>
+                          <p class="news-date">18.05.2025</p>
+                          <p class="card-text">
+                            Hurmatli talabalar va professor-o'qituvchilar!
+                            Tatuff o'quv markazining barcha fakultet va
+                            yo'nalishlari uchun 2025/2026 o'quv yilining yangi
+                            dars jadvallari e'lon qilindi. Jadvallarni ko'rish
+                            uchun o'z fakultetingiz bo'limiga o'ting yoki
+                            qidiruv tizimidan foydalaning.
+                          </p>
+                          <p>
+                            Jadvallar har bir guruh uchun alohida ishlab
+                            chiqilgan bo'lib, talabalar va o'qituvchilar
+                            vaqtidan samarali foydalanish imkoniyati yaratilgan.
+                          </p>
+                          <a href="#" class="btn btn-primary">Batafsil</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
 
         <!-- News Grid -->
@@ -352,5 +485,6 @@
         });
       });
     </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
